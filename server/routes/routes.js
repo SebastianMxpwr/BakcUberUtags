@@ -1,0 +1,20 @@
+const PasajerosV = require('../controller/pasajero/controller_pasajero')
+const pasajeros = require('../controller/pasajero/controller_pasajero2')
+const ConductoresV = require('../controller/conductor/controller_conductor')
+const conductores = require('../controller/conductor/conductor_controllerv2')
+const viajes = require('../controller/viaje/viaje_controller')
+const AdminV = require('../controller/admin/admin_controller')
+module.exports = (router) => {
+  router.post('/register/pasajero', PasajerosV.createpas)
+  router.post('/login/pasajero', PasajerosV.loginpas)
+  router.get('/pasajeros', pasajeros.getPasajeros)
+  router.post('/register/conductor', ConductoresV.createcon)
+  router.post('/login/conductor', ConductoresV.logincon)
+  router.get('/conductores', conductores.getConductores)
+  router.post('/register/admin', AdminV.createAdmin)
+  router.post('/login/admin', AdminV.loginadmin)
+  router.post('/add/viaje', viajes.crearViaje)
+  router.get('/viajes', viajes.getViaje)
+  router.delete('/del/viaje/:id' , viajes.deleteViaje)
+}
+
