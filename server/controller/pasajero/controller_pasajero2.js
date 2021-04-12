@@ -6,4 +6,9 @@ pasajeroCtrl.getPasajeros = async (req, res)=>{
     res.json(pasajero)
 }
 
+pasajeroCtrl.deletePasajeros = async(req, res) => {
+    await pasajeroModel.findByIdAndDelete(req.params.id)
+    res.json({status: 'Producto Eliminado'})
+}
+
 module.exports = pasajeroCtrl
