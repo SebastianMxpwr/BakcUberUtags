@@ -6,4 +6,9 @@ condcutorCtrl.getConductores = async(re, res)=>{
     res.json(conductor)
 }
 
+condcutorCtrl.deleteConductores = async(req, res) => {
+    await conductorModel.findByIdAndDelete(req.params.id)
+    res.json({status: 'Producto Eliminado'})
+}
+
 module.exports = condcutorCtrl
